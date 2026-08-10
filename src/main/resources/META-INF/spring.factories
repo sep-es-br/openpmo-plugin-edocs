@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=br.gov.es.pmo.edocs_parser.config.EDocsParserAutoConfig

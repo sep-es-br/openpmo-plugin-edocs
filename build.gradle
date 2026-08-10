@@ -1,0 +1,31 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'com.github.sep-es-br'
+version = '1.0.0'
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.2.12.RELEASE'
+    implementation 'org.json:json:20190722'
+    implementation 'com.github.sep-es-br:openpmo-plugin-administrative-process-interface:1.0.0'
+    implementation 'com.github.sep-es-br:pmo-core-organization-parser:1.1.2'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'openpmo-plugin-edocs'
+            from components.java
+        }
+    }
+}
